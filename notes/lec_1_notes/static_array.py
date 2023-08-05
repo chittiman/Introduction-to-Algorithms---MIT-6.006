@@ -22,9 +22,20 @@ class StaticArray():
     
     def __iter__(self):
         return (i for i in self.data)
+    
+    @classmethod
+    def build(cls,sequence):
+        seq_len = len(sequence)
+        arr = cls(seq_len)
+        for i,item in enumerate(sequence):
+            arr[i] = item
+        return arr
+    
+# Usage:
+#new_instance = StaticArray.build("value1", "value2")
+
+
         
 if __name__ == "__main__":
-    x = StaticArray(5)
-    x[1] = 1
-    for i in x:
-        print(i)
+    x = StaticArray.build([1,2,3])
+    print(type(x))
