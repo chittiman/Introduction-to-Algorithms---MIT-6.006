@@ -15,15 +15,16 @@ def count_long_subarray(A):
         if pres > prev :
             pres_len += 1
         else:
-            if pres_len > max_len:
-                max_len = pres_len
-                count = 1
-            elif pres_len == max_len:
-                count += 1
-            else:
-                pass
+            max_len,count = update_count_max_len(pres_len,max_len,count)
             pres_len = 1
         prev = pres
+        
+    max_len,count = update_count_max_len(pres_len,max_len,count)
+
+    ##################
+    return count
+
+def update_count_max_len(pres_len,max_len,count):
     if pres_len > max_len:
         max_len = pres_len
         count = 1
@@ -31,9 +32,7 @@ def count_long_subarray(A):
         count += 1
     else:
         pass
-
-    ##################
-    return count
+    return max_len,count
 
 if __name__ == "__main__":
     array = (2, 2, 4, 1, 4)
