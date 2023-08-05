@@ -14,6 +14,7 @@ def count_long_subarray(A):
     for i,pres in enumerate(A[1:],start=1):
         if pres > prev :
             pres_len += 1
+        else:
             if pres_len > max_len:
                 max_len = pres_len
                 count = 1
@@ -21,9 +22,15 @@ def count_long_subarray(A):
                 count += 1
             else:
                 pass
-        else:
             pres_len = 1
         prev = pres
+    if pres_len > max_len:
+        max_len = pres_len
+        count = 1
+    elif pres_len == max_len:
+        count += 1
+    else:
+        pass
 
     ##################
     return count
