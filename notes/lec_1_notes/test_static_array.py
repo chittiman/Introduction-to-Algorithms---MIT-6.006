@@ -57,3 +57,16 @@ class TestStaticArrayIter:
         arr[3] = 'd'
         assert list(arr) == ['a', None, None, 'd']
 
+class TestStaticArrayBuild:
+    def test_build_empty_sequence(self):
+        seq = []
+        arr = StaticArray.build(seq)
+        assert len(arr) == 0
+
+    def test_build_non_empty_sequence(self):
+        seq = [1, 2, 3, 4]
+        arr = StaticArray.build(seq)
+        assert len(arr) == len(seq)
+
+        for i, item in enumerate(seq):
+            assert arr[i] == item
