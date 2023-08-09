@@ -15,12 +15,21 @@ class LinkedList:
             prev_node = pres_node
         self.head = prev_node
 
+        # Alt implementation
+        # for a in reversed(X):
+        #     self.insert_first(a)
+
     def __iter__(self):
         node = self.head
         for _ in range(len(self)):
             item = node.item
             node = node.next
             yield item
+        # Alt implementation
+        # node = self.head
+        # while node:
+        #     yield node.item
+        #     node = node.next
 
     def __getitem__(self,i):
         if 0<=i<len(self):

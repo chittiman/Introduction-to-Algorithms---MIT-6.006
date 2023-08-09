@@ -22,6 +22,7 @@ class StaticArray():
     
     def __iter__(self):
         return (i for i in self.data)
+        #Alt - yield from self.data
     
     @classmethod
     def build(cls,sequence):
