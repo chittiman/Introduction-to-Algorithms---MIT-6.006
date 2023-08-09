@@ -46,28 +46,3 @@ if __name__ == "__main__":
     print(x)
     x.delete_at(2)
     print(x)
-# class Animal:
-#     def __init__(self, name):
-#         self.name = name
-
-#     def make_sound(self):
-#         print("Generic animal sound")
-
-# class Dog(Animal):
-#     def __init__(self, name, breed):
-#         # Calling the parent class constructor using super()
-#         super().__init__(name)
-#         self.breed = breed
-
-#     def make_sound(self):
-#         print("Woof! Woof!")
-
-# # Creating an instance of Dog
-# dog_instance = Dog("Buddy", "Labrador")
-
-# # Accessing attributes of the Dog instance
-# print(dog_instance.name)   # Output: Buddy
-# print(dog_instance.breed)  # Output: Labrador
-
-# # Calling methods of the Dog instance
-# dog_instance.make_sound()  # Output: Woof! Woof!
