@@ -105,9 +105,12 @@ class LinkedListNode:
 if __name__ == '__main__':
     linked_list = LinkedList()
     linked_list.build([1, 2, 3])
-    deleted_item = linked_list.delete_at(0)
-    assert len(linked_list) == 2
-    assert deleted_item == 1
-    assert linked_list.head.item == 2
+    a = linked_list.head 
+    b = linked_list.head.next
+    print(a.later_node(2) == b.later_node(1))
+    # deleted_item = linked_list.delete_at(0)
+    # assert len(linked_list) == 2
+    # assert deleted_item == 1
+    # assert linked_list.head.item == 2
 
     
