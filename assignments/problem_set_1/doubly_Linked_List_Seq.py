@@ -61,7 +61,7 @@ class Doubly_Linked_List_Seq:
         else:
             self.head = self.tail
         ###########################
-        pass
+        return None
 
     def delete_first(self):
         x = None
@@ -122,15 +122,30 @@ class Doubly_Linked_List_Seq:
     def splice(self, x, L2):
         ###########################
         # Part (c): Implement me! # 
-        next_node = x.next
-        L2.next = next_node
-        if next_node:
-            next_node.prev = L2.tail
+
+        if L2.head is None:
+            return None
+
+        L2.tail.next = x.next
+        if x.next:
+            x.next.prev = L2.tail
         else:
             self.tail = L2.tail
 
         x.next = L2.head
         L2.head.prev = x
+
+        L2.head = L2.tail = None
+
+        # next_node = x.next
+        # L2.next = next_node
+        # if next_node:
+        #     next_node.prev = L2.tail
+        # else:
+        #     self.tail = L2.tail
+
+        # x.next = L2.head
+        # L2.head.prev = x
 
         ###########################
         return None
