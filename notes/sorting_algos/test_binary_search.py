@@ -36,12 +36,27 @@ class TestBinarySearch:
     def test_item_at_middle_with_duplicates(self):
         A = [1, 3, 5, 5, 7, 9]
         index = binary_search(A, 5)
-        assert index in [2,3]
+        assert index == 2
 
     def test_item_range(self):
         A = [1, 3, 5, 7, 9]
         index = binary_search(A, 5, start=1, end=4)
         assert index == 2
+
+    def test_repetition_at_start(self):
+        A = [3, 3, 5, 7, 9]
+        index = binary_search(A, 3)
+        assert index == 0
+
+    def test_repetition_at_end(self):
+        A = [1, 3, 5, 7, 7]
+        index = binary_search(A, 7)
+        assert index == 3
+
+    def test_repetition_at_middle(self):
+        A = [1, 3, 3, 5, 7, 9]
+        index = binary_search(A, 3)
+        assert index == 1
 
     # Add more tests as needed
 
